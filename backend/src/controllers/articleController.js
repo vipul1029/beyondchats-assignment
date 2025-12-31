@@ -1,0 +1,35 @@
+import Article from "../models/Article.js";
+
+export const createArticle = async (req, res) => {
+  try {
+    const article = await Article.create(req.body);
+    res.status(201).json(article);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
+export const getArticles = async (req, res) => {
+  const articles = await Article.find().sort({ createdAt: -1 });
+  res.json(articles);
+};
+
+export const getArticleById = async (req, res) => {
+  const article = await Article.findById(req.params.id);
+  if (!article) return res.status(404).json({ message: "Not found" });
+  res.json(article);
+};
+
+export const updateArticle = async (req, res) => {
+  const article = await Article.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
+  res.json(article);
+};
+
+export const deleteArticle = async (req, res) => {
+  await Article.findByIdAndDelete(req.params.id);
+  res.json({ message: "Deleted successfully" });
+};
