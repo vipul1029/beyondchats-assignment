@@ -29,7 +29,7 @@ export const scrapeArticleContent = async (url) => {
       .slice(0, 4000); // limit size
 
   } catch (error) {
-    console.error("❌ Content scrape failed:", url);
+    console.error(" Content scrape failed:", url);
     return "";
   }
 };

@@ -31,7 +31,7 @@ export const searchCompetingArticles = async (query) => {
     return links;
 
   } catch (error) {
-    console.error("❌ SerpAPI error:", error.message);
+    console.error("SerpAPI error:", error.message);
     return [];
   }
 };
