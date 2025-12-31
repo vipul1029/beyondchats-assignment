@@ -9,24 +9,24 @@ dotenv.config();
 
 async function runAutomation() {
   try {
-    console.log("🚀 Starting automation pipeline...");
+    console.log(" Starting automation pipeline...");
 
     // 1. Fetch articles from backend
     const { data: articles } = await axios.get(process.env.BACKEND_API);
 
     if (!articles.length) {
-      console.log("❌ No articles found");
+      console.log(" No articles found");
       return;
     }
 
     for (const article of articles) {
-      console.log(`\n📝 Processing: ${article.title}`);
+      console.log(`\n Processing: ${article.title}`);
 
       // 2. Google search
       const links = await searchCompetingArticles(article.title);
 
       if (links.length < 2) {
-        console.log("⚠️ Not enough competing articles, skipping...");
+        console.log(" Not enough competing articles, skipping...");
         continue;
       }
 
@@ -54,13 +54,13 @@ async function runAutomation() {
         }
       );
 
-      console.log("✅ Article updated successfully");
+      console.log(" Article updated successfully");
     }
 
-    console.log("\n🎉 Automation completed");
+    console.log("\n Automation completed");
 
   } catch (error) {
-    console.error("❌ Automation failed:", error.message);
+    console.error(" Automation failed:", error.message);
   }
 }
 

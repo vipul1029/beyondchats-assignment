@@ -11,7 +11,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <h1>AI-Powered Blog Enhancement Platform</h1>
+          <h1> Blog Enhancement Platform</h1>
           <p>
             Automatically scrape, analyze, and enhance blog content by comparing
             it with top-ranking Google articles using intelligent automation.
@@ -26,7 +26,7 @@ export default function Home() {
       {/* FEATURES */}
       <section className="features">
         <motion.div className="feature-card" whileHover={{ y: -6 }}>
-          <h3>📥 Smart Scraping</h3>
+          <h3> Smart Scraping</h3>
           <p>
             Automatically extracts the oldest BeyondChats blog articles and
             stores them in a structured database.
@@ -34,7 +34,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div className="feature-card" whileHover={{ y: -6 }}>
-          <h3>🔍 Google Comparison</h3>
+          <h3> Google Comparison</h3>
           <p>
             Uses Google Search results to identify competing articles and
             understand ranking patterns.
@@ -42,7 +42,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div className="feature-card" whileHover={{ y: -6 }}>
-          <h3>🤖 AI Enhancement</h3>
+          <h3> AI Enhancement</h3>
           <p>
             Enhances original content by improving structure, clarity, and
             relevance while preserving intent.
@@ -62,17 +62,33 @@ export default function Home() {
         </ol>
       </section>
 
-      {/* CTA */}
-      <section className="final-cta">
-        <h2>Built as a Full-Stack Engineering Assignment</h2>
-        <p>
-          Demonstrates backend engineering, automation pipelines, and modern
-          frontend UI/UX.
-        </p>
-        <Link to="/about" className="cta secondary">
-          Learn More
-        </Link>
-      </section>
+   {/* FINAL CTA */}
+<section className="final-cta">
+  <motion.div
+    className="cta-content"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+  >
+    <h2>Designed as a Real-World Full-Stack System</h2>
+    <p>
+      This project showcases how modern teams automate content workflows 
+     combining scraping, search intelligence, AI-assisted rewriting, and a
+      polished frontend experience.
+    </p>
+
+    <div className="cta-actions">
+      <Link to="/articles" className="cta primary">
+        View Articles
+      </Link>
+      <Link to="/about" className="cta secondary">
+        About This Project
+      </Link>
+    </div>
+  </motion.div>
+</section>
+
     </>
   );
 }

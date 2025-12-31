@@ -3,41 +3,116 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <motion.div
-      className="about"
-      initial={{ opacity: 0, y: 30 }}
+      className="about-page"
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      <h2>About This Project</h2>
+      {/* Header */}
+      <section className="page-header">
+        <h2>About This Project</h2>
+        <p>
+          A full-stack assignment built to demonstrate real-world scraping,
+          automation, and modern frontend development.
+        </p>
+      </section>
 
-      <p>
-        This project was built as part of the BeyondChats Full Stack Developer
-        Intern assignment to demonstrate real-world engineering skills across
-        backend systems, automation pipelines, and frontend development.
-      </p>
+      {/* Main Content */}
+      <section className="about">
+        <motion.div
+          className="card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <h3> Project Objective</h3>
+          <p>
+            The goal of this assignment was to simulate a real content
+            optimization workflow starting from scraping articles, enriching
+            them using top-ranking references, and finally presenting them in a
+            clean, professional dashboard.
+          </p>
+        </motion.div>
 
-      <h3>Backend</h3>
-      <p>
-        A Node.js + Express backend scrapes BeyondChats blogs, stores them in
-        MongoDB, and exposes secure CRUD APIs.
-      </p>
+        <motion.div
+          className="card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.35 }}
+        >
+          <h3> What Was Built</h3>
+          <ul>
+            <li>
+              <strong>Backend APIs:</strong> Node.js + Express APIs to scrape,
+              store, and manage blog articles.
+            </li>
+            <li>
+              <strong>Automation Pipeline:</strong> A script that finds
+              competing Google articles, scrapes content, and updates original
+              posts using LLM-generated enhancements.
+            </li>
+            <li>
+              <strong>Frontend Dashboard:</strong> A React-based interface to
+              view original and updated articles along with references.
+            </li>
+          </ul>
+        </motion.div>
 
-      <h3>Automation</h3>
-      <p>
-        An automation script searches Google for competing articles, scrapes
-        relevant content, and enhances the original article using AI-assisted
-        formatting and structuring.
-      </p>
+        <motion.div
+          className="card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <h3> Tech Stack</h3>
+          <p>
+            This project was built using modern, production-ready technologies:
+          </p>
+          <ul>
+            <li>Frontend: React, Vite, Framer Motion</li>
+            <li>Backend: Node.js, Express, MongoDB</li>
+            <li>Scraping: Axios, Cheerio</li>
+            <li>Search: SerpAPI (Google Search)</li>
+            <li>Deployment: Vercel</li>
+          </ul>
+        </motion.div>
 
-      <h3>Frontend</h3>
-      <p>
-        A modern React application displays original and updated articles with
-        animations, clean UI, and a responsive layout.
-      </p>
+        <motion.div
+          className="card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.65 }}
+        >
+          <h3> Why This Matters</h3>
+          <p>
+            This assignment reflects how modern teams automate content
+            improvement pipelines combining scraping, search ranking signals,
+            AI-assisted writing, and clean UI presentation.
+          </p>
+          <p>
+            Every part of this system was designed with scalability,
+            readability, and maintainability in mind.
+          </p>
+        </motion.div>
+      </section>
 
-      <p>
-        The goal was to simulate a real product workflow rather than a simple
-        demo.
-      </p>
+    
+      <motion.section
+        className="final-cta"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2>Built with passion & attention to detail</h2>
+        <p>
+          Thank you for taking the time to review this submission.
+        </p>
+      </motion.section>
     </motion.div>
   );
 }
