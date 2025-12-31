@@ -1,12 +1,8 @@
 import Article from "../models/Article.js";
 
 export const createArticle = async (req, res) => {
-  try {
-    const article = await Article.create(req.body);
-    res.status(201).json(article);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
+  const article = await Article.create(req.body);
+  res.status(201).json(article);
 };
 
 export const getArticles = async (req, res) => {
@@ -21,11 +17,9 @@ export const getArticleById = async (req, res) => {
 };
 
 export const updateArticle = async (req, res) => {
-  const article = await Article.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  );
+  const article = await Article.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  });
   res.json(article);
 };
 

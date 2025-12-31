@@ -1,5 +1,4 @@
 import express from "express";
-import { scrapeAndStoreArticles } from "../controllers/scrapeController.js";
 
 import {
   createArticle,
@@ -9,6 +8,8 @@ import {
   deleteArticle
 } from "../controllers/articleController.js";
 
+import { scrapeAndStoreArticles } from "../controllers/scrapeController.js";
+
 const router = express.Router();
 
 router.post("/", createArticle);
@@ -17,6 +18,5 @@ router.get("/:id", getArticleById);
 router.put("/:id", updateArticle);
 router.delete("/:id", deleteArticle);
 router.post("/scrape", scrapeAndStoreArticles);
-
 
 export default router;

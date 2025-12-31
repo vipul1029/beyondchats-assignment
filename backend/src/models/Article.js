@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 const articleSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    originalContent: String,
-    updatedContent: String,
+    originalContent: { type: String, default: "" },
+    updatedContent: { type: String, default: "" },
     references: { type: [String], default: [] },
     isUpdated: { type: Boolean, default: false }
   },
